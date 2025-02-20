@@ -28,7 +28,7 @@ export function Footer({ fixed = false }: FooterProps) {
             mr="2"
             color={isDarkMode ? 'gray.50' : 'gray.800'}
           >
-            Connect with me
+            Conecte-se comigo
           </Text>
         </Flex>
       </Flex>

@@ -6,7 +6,7 @@ export function GradientLine() {
       as="div"
       // bgGradient="linear(to-r, blue.600, blue.300)"
       bgGradient="linear(to-l, blue.600, #7928CA)"
-      h={4}
+      h={2}
       w="full"
     />
   )

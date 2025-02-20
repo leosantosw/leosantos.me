@@ -42,7 +42,7 @@ export function Projects() {
         py="4"
         color={isDarkMode ? 'gray.50' : 'blue.900'}
       >
-        Projects
+        Projetos
       </Text>
 
       <Stack spacing="4">

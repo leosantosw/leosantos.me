@@ -32,7 +32,7 @@ export function MenuMobile() {
               <MenuItem icon={<House size={18} />}>Home</MenuItem>
             </Link>
             <Link href="/about" passHref>
-              <MenuItem icon={<Info size={18} />}>About</MenuItem>
+              <MenuItem icon={<Info size={18} />}>Sobre</MenuItem>
             </Link>
             <Link href="https://dev.to/leosantosw" target="_blank">
               <MenuItem icon={<Browser size={18} />}>Blog</MenuItem>

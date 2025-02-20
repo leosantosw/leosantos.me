@@ -19,7 +19,7 @@ export default function Home() {
 
       <Projects />
 
-      <Footer fixed={true} />
+      <Footer />
     </>
   )
 }

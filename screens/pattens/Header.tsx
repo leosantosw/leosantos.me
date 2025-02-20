@@ -48,7 +48,7 @@ export function Header() {
         {!isMobileVersion && (
           <Flex>
             <NavLink href="/">Home</NavLink>
-            <NavLink href="/about">About</NavLink>
+            <NavLink href="/about">Sobre</NavLink>
             <NavLink href="https://dev.to/leosantosw" target="_blank">
               Blog
             </NavLink>

@@ -37,6 +37,7 @@ export function ContentWrapper() {
     >
       <Stack p={[8, 6, 0]} spacing={4} align="flex-start">
         <MotionHeading
+          pt={6}
           bgGradient={gradientColorText}
           bgClip="text"
           fontSize={['3xl', '5xl']}
