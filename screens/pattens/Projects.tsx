@@ -1,6 +1,27 @@
 import { Container, Stack, Text, useColorMode } from '@chakra-ui/react'
 import { ProjectCard } from '../../components/ProjectCard'
 
+const projects = [
+  {
+    title: 'Go Web App',
+    description:
+      'Web application built with Go. It allows you to manage products',
+    link: 'https://github.com/leosantosw/go-web-app'
+  },
+  {
+    title: 'Customers Api',
+    description:
+      'This project is a serverless application designed to manage customer data.',
+    link: 'https://github.com/leosantosw/customers-api'
+  },
+  {
+    title: 'My portfolio website',
+    description:
+      'This is a Next.js portfolio built with Chakra UI and TypeScript.',
+    link: 'https://github.com/leosantosw/leosantos.me'
+  }
+]
+
 export function Projects() {
   const { colorMode } = useColorMode()
   const isDarkMode = colorMode === 'dark'
@@ -25,21 +46,14 @@ export function Projects() {
       </Text>
 
       <Stack spacing="4">
-        <ProjectCard
-          title="Microsservice Lex"
-          description="Microsservice to use Amazon Lex"
-          link="https://github.com/leosantosw/microservice-lex"
-        />
-        <ProjectCard
-          title="ECS with Terraform"
-          description="Terraform template for AWS ECS/Fargate setup"
-          link="https://github.com/leosantosw/ecs-terraform"
-        />
-        <ProjectCard
-          title="My portfolio website"
-          description="This is a Next.js portfolio built with Chakra UI and TypeScript."
-          link="https://github.com/leosantosw/leosantos.tech"
-        />
+        {projects.map((project) => (
+          <ProjectCard
+            key={project.link}
+            title={project.title}
+            description={project.description}
+            link={project.link}
+          />
+        ))}
       </Stack>
     </Container>
   )

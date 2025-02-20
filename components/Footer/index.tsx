@@ -4,7 +4,10 @@ import { GithubLogo, LinkedinLogo, TwitterLogo } from 'phosphor-react'
 
 import { GradientLine } from '../GradientLine'
 
-export function Footer() {
+interface FooterProps {
+  fixed?: boolean
+}
+export function Footer({ fixed = false }: FooterProps) {
   const { colorMode } = useColorMode()
   const isDarkMode = colorMode === 'dark'
   return (
@@ -14,6 +17,8 @@ export function Footer() {
       marginTop="auto"
       direction="column"
       mt="6"
+      position={fixed ? 'fixed' : 'relative'}
+      bottom={0}
     >
       <Flex justifyContent="center" py="2">
         <Flex pt="2">
@@ -33,7 +38,7 @@ export function Footer() {
             <GithubLogo size="30" />
           </Link>
           <Link
-            href="https://www.linkedin.com/in/leonardosant02"
+            href="https://www.linkedin.com/in/leosantos02"
             target="_blank"
             passHref
           >

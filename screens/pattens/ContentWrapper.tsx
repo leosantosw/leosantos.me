@@ -1,12 +1,21 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Text, Container, Stack, useColorMode, Box } from '@chakra-ui/react'
+import {
+  Text,
+  Container,
+  Stack,
+  useColorMode,
+  Box,
+  Heading
+} from '@chakra-ui/react'
+import { motion } from 'framer-motion'
 
-import { GetDayOfWeek } from '../../utils/GetDayOfWeek'
 import rocketImg from '../../public/assets/rocket-launch.svg'
 
+const MotionHeading = motion(Heading)
+const MotionText = motion(Text)
+
 export function ContentWrapper() {
-  const dayOfWeek = GetDayOfWeek()
   const { colorMode } = useColorMode()
   const isDarkMode = colorMode === 'dark'
 
@@ -26,39 +35,55 @@ export function ContentWrapper() {
       flexDir="column"
       justifyContent="center"
     >
-      <Stack p={[8, 6, 0]} spacing={-2} align="flex-start">
-        <Text
+      <Stack p={[8, 6, 0]} spacing={4} align="flex-start">
+        <MotionHeading
           bgGradient={gradientColorText}
           bgClip="text"
           fontSize={['3xl', '5xl']}
           fontWeight="extrabold"
           letterSpacing="8"
-          textAlign="justify"
+          textAlign="left"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
         >
-          Happy {dayOfWeek}!
-        </Text>
+          Olá, seja bem-vindo!
+        </MotionHeading>
 
-        <Box display="flex" gap={4}>
-          <Text
+        <Box display="flex" gap={4} alignItems="center">
+          <MotionText
             bgGradient={gradientColorText}
             bgClip="text"
-            fontSize={['3xl', '5xl']}
-            fontWeight="extrabold"
-            textAlign="justify"
-            letterSpacing="8"
+            fontSize={['2xl', '4xl']}
+            fontWeight="bold"
+            letterSpacing="4"
+            textAlign="left"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
-            I&apos;m Leo Santos
-          </Text>
-          <Image src={rocketImg} width={50} height={50} alt="Rocket" />
+            Eu sou Leo Santos
+          </MotionText>
+          <MotionText
+            as="span"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <Image src={rocketImg} width={40} height={40} alt="Rocket" />
+          </MotionText>
         </Box>
 
-        <Text
-          py={4}
-          fontSize={['1xl', '2xl']}
+        <MotionText
+          py={2}
+          fontSize={['lg', 'xl']}
           fontWeight="light"
-          textAlign="justify"
+          textAlign="left"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
         >
-          Software Developer at{' '}
+          Desenvolvedor de Software na{' '}
           <Link href="https://www.marche.com.br" target="_blank">
             <Text
               as="span"
@@ -70,7 +95,7 @@ export function ContentWrapper() {
               St Marche
             </Text>
           </Link>
-        </Text>
+        </MotionText>
       </Stack>
     </Container>
   )

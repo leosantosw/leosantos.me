@@ -7,8 +7,8 @@ import {
   useColorMode
 } from '@chakra-ui/react'
 import Link from 'next/link'
-import useSound from 'use-sound'
-import biteSound from '../../public/sounds/bite.mp3'
+// import useSound from 'use-sound'
+// import biteSound from '../../public/sounds/bite.mp3'
 
 type ProjectCardProps = {
   title: string
@@ -19,10 +19,10 @@ type ProjectCardProps = {
 export function ProjectCard({ title, description, link }: ProjectCardProps) {
   const { colorMode } = useColorMode()
   const isDarkMode = colorMode === 'dark'
-  const [play] = useSound(biteSound)
+  // const [play] = useSound(biteSound)
 
   function handlePlaySound() {
-    play()
+    // play()
   }
 
   return (
